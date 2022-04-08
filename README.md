@@ -1,3 +1,3 @@
-# hello-boss
+# Hello Boss
 
 Employee Management System
