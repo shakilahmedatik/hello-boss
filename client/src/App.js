@@ -7,6 +7,8 @@ import PassReset from "./pages/Authentication/PassReset";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
 import NotFound from "./pages/NotFound/NotFound";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Statistics from "./pages/Dashboard/Statistics";
 
 const App = () => {
   return (
@@ -14,6 +16,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="statistics" element={<Statistics />} />
+        </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/password-reset" element={<PassReset />} />
