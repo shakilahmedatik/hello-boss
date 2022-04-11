@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "Employee Management System",
   "main": "server.js",
+  "engines":{
+    "node": "16.4.2",
+    "npm":"8.6.0"
+  },
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node -r esm server.js",
-    "dev": "nodemon -r esm server.js"
+    "server": "nodemon -r esm server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -24,6 +32,7 @@
   },
   "homepage": "https://github.com/shakilahmedatik/hello-boss#readme",
   "dependencies": {
+    "concurrently": "^7.1.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
     "esm": "^3.2.25",
