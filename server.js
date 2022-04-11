@@ -1,7 +1,9 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 const morgan = require("morgan");
+import './database/db'
 require("dotenv").config();
+
 
 //Express App
 const app = express();
@@ -10,8 +12,6 @@ const app = express();
 app.use(express.json({ limit: "5mb" }));
 app.use(cookieParser());
 app.use(morgan("dev"));
-
-
 
 
 // port
