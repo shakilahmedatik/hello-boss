@@ -33,16 +33,19 @@ const DefaultLayout = ({ children }) => {
         </Link>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["/"]}>
           <Menu.Item key="/" icon={<HomeOutlined />}>
-            <Link to="/">Home</Link>
+            <Link to="/">Dashboard</Link>
           </Menu.Item>
-          <Menu.Item key="/bills" icon={<CopyOutlined />}>
-            <Link to="/bills">Bills</Link>
+          <Menu.Item key="/course-management" icon={<CopyOutlined />}>
+            <Link to="/course-management">Course Management</Link>
           </Menu.Item>
-          <Menu.Item key="/items" icon={<UnorderedListOutlined />}>
-            <Link to="/items">items</Link>
+          <Menu.Item
+            key="/assignment-management"
+            icon={<UnorderedListOutlined />}
+          >
+            <Link to="/assignment-management">Assignment Management</Link>
           </Menu.Item>
-          <Menu.Item key="/customers" icon={<UserOutlined />}>
-            <Link to="/customers">Customers</Link>
+          <Menu.Item key="/employee-management" icon={<UserOutlined />}>
+            <Link to="/employee-management">Employee Management</Link>
           </Menu.Item>
           <Menu.Item
             key="/logout"
