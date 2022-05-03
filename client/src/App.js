@@ -9,7 +9,12 @@ import About from "./pages/About/About";
 import NotFound from "./pages/NotFound/NotFound";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Statistics from "./pages/Dashboard/Statistics";
-import CourseManagement from "./pages/CourseManagement/CourseManagement";
+import CreateCourse from "./pages/CourseManagement/CreateCourse";
+import CourseList from "./pages/CourseManagement/CourseList";
+import CreateAssignment from "./pages/AssignmentManagement/CreateAssignment";
+import AssignmentList from "./pages/AssignmentManagement/AssignmentList";
+import CreateEmployee from "./pages/EmployeeManagement/CreateEmployee";
+import EmployeeList from "./pages/EmployeeManagement/EmployeeList";
 
 const App = () => {
   return (
@@ -19,7 +24,12 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Statistics />} />
-          <Route path="course-management" element={<CourseManagement />} />
+          <Route path="create-course" element={<CreateCourse />} />
+          <Route path="course-list" element={<CourseList />} />
+          <Route path="create-assignment" element={<CreateAssignment />} />
+          <Route path="assignment-list" element={<AssignmentList />} />
+          <Route path="create-employee" element={<CreateEmployee />} />
+          <Route path="employee-list" element={<EmployeeList />} />
         </Route>
 
         <Route path="/register" element={<Register />} />

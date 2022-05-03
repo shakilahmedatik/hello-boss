@@ -11,8 +11,8 @@ import {
   LogoutOutlined,
   UserOutlined,
   UnorderedListOutlined,
-  ShoppingCartOutlined,
 } from "@ant-design/icons";
+const { SubMenu } = Menu;
 
 const { Header, Sider, Content } = Layout;
 
@@ -25,7 +25,7 @@ const DefaultLayout = ({ children }) => {
 
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      <Sider trigger={null} collapsible collapsed={collapsed} width={250}>
         <Link to="/">
           <div className="logo">
             <h3> {collapsed ? "HB" : "Hello Boss"}</h3>
@@ -35,18 +35,49 @@ const DefaultLayout = ({ children }) => {
           <Menu.Item key="/dashboard" icon={<HomeOutlined />}>
             <Link to="/dashboard">Dashboard</Link>
           </Menu.Item>
-          <Menu.Item key="/course-management" icon={<CopyOutlined />}>
-            <Link to="/dashboard/course-management">Course Management</Link>
-          </Menu.Item>
-          <Menu.Item
-            key="/assignment-management"
+
+          <SubMenu title="Course Management" icon={<CopyOutlined />}>
+            <Menu.Item key="/dashboard/create-course">
+              <Link className="ml-2" to="/dashboard/create-course">
+                Create Course
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="/dashboard/course-list">
+              <Link className="ml-2" to="/dashboard/course-list">
+                Course List
+              </Link>
+            </Menu.Item>
+          </SubMenu>
+
+          <SubMenu
+            title="Assignment Management"
             icon={<UnorderedListOutlined />}
           >
-            <Link to="/assignment-management">Assignment Management</Link>
-          </Menu.Item>
-          <Menu.Item key="/employee-management" icon={<UserOutlined />}>
-            <Link to="/employee-management">Employee Management</Link>
-          </Menu.Item>
+            <Menu.Item key="/dashboard/create-assignment">
+              <Link className="ml-2" to="/dashboard/create-assignment">
+                Create Assignment
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="/dashboard/assignment-list">
+              <Link className="ml-2" to="/dashboard/assignment-list">
+                Assignment List
+              </Link>
+            </Menu.Item>
+          </SubMenu>
+
+          <SubMenu title="Employee Management" icon={<UserOutlined />}>
+            <Menu.Item key="/dashboard/create-employee">
+              <Link className="ml-2" to="/dashboard/create-employee">
+                Create Employee
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="/dashboard/employee-list">
+              <Link className="ml-2" to="/dashboard/employee-list">
+                Employee List
+              </Link>
+            </Menu.Item>
+          </SubMenu>
+
           <Menu.Item
             key="/logout"
             icon={<LogoutOutlined />}
