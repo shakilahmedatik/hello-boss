@@ -1,11 +1,11 @@
-import express from 'express'
-const router = express.Router()
-
-
+import express from "express";
+const router = express.Router();
 
 // Routes
-router.get('/', (req,res)=>{
-    res.send('Hello')
-})
+router.get("/", (req, res) => {
+  res.send("Hello");
+});
 
-module.exports = router
+module.exports = router;
+
+// Another comment in user
