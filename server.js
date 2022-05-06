@@ -5,8 +5,6 @@ const morgan = require("morgan");
 import "./database/db";
 require("dotenv").config();
 
-// New comment in server
-
 //Express App
 const app = express();
 
